@@ -38,15 +38,14 @@ const copy = {
 }
 
 //单张图片查看大图
-const pic = {
-  mounted: function (el) {
+
+Vue.directive('copy', copy)
+Vue.directive('pic', {
+  bind: function (el) {
     el.addEventListener('click', ({target}) => {
       BigPicture({
         el: target
       })
     })
   },
-}
-
-Vue.directive('copy', copy)
-Vue.directive('pic', pic)
+})

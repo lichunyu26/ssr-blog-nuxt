@@ -1,6 +1,10 @@
 <template>
   <div class="home-index">
-    <h2>李某人
+    <h4 style="margin-top: 4px">
+      来自河南的一个糙汉子，入行后经不住岁月和生活的摩擦，
+      短短三年时间，体重暴涨近60斤。
+    </h4>
+    <h2>
       <a-tag color="blue">胖子</a-tag>
       <a-tag color="blue">Java</a-tag>
       <a-tag color="blue">前端</a-tag>
@@ -9,10 +13,7 @@
       <a-tag color="blue">技术宅</a-tag>
       <a-tag color="blue">有梦想的咸鱼...</a-tag>
     </h2>
-    <h4>
-      河南汉子，未入行前也算是翩翩公子一枚，奈何入行后经不住岁月和生活的摩擦，
-      短短三年时间，体重暴涨近60斤。
-    </h4>
+
     <a-divider orientation="left" style="border-color: #d7dae2" dashed></a-divider>
     <h4>
       2018 年入行，从一名JavaWeb开发做起，期间接触了大数据处理。

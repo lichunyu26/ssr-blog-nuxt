@@ -19,17 +19,25 @@ pieChart?.setOption({...})"/>
 console.log(tempObj)"/>
         <p>此时当res为null,false,undefined,0时，会给赋予{}，不然会把res的值赋给tempObj</p>
         <p>百度后发现当 res = '' 的时候，也会赋值 {}</p>
-        <p>个人理解：let temp =  a || 'default string' </p>
+        <p>个人理解：let temp = a || 'default string' </p>
         <p>当a是[null,false,undefined,0,'']其中任意一种时，则赋值default string，反则赋予temp a的值</p>
 
-        <h3>??是在查?.过程中意外看到的，顺便记录一下</h3>
-
-        </a-collapse-panel>
-      <a-collapse-panel header="This is panel header 2">
+        <h3>??是在查?.过程中看到的，顺便记录一下</h3>
+        <p>大致作用和||差不多，但是对于运算符左侧的类型少了一些，只有null 和 undefined</p>
       </a-collapse-panel>
-      <a-collapse-panel header="This is panel header 3">
+      <a-collapse-panel header="从数组里面删除指定元素，并返回删除后的数组">
+        <p>在一些可以动态编辑的页面，该需求是很经常用到的。</p>
+        <p>但是js提供的splice()方法向/从数组中添加/删除项目，然后返回被删除的项目。</p>
+        <p>splice()是返回删除的元素，但是会修改原数组，那么可以直接封装一个方法，接收要删除的元素和原数组，删除后返回这个数组即可实现</p>
+        <insert-code-h5 insert-code="function deleteArrayItem(arr, item) {
+    const itemIndex = arr.indexOf(item)
+    if (itemIndex > -1) arr.splice(itemIndex, 1);
+    return arr
+}"></insert-code-h5>
+
       </a-collapse-panel>
     </a-collapse>
+    <p class="last-update-time">最后更新时间：2021/5/14</p>
   </div>
 </template>
 
@@ -37,12 +45,20 @@ console.log(tempObj)"/>
   export default {
     name: 'js-kinky-tricks',
     layout: "blog-layout",
-    data() {
-      return {
-        activeKey: ""
-      }
-    }
-
+    head: {
+      title: 'L‘s Blog',
+      meta: [
+        {
+          hid: 'blog-index-description',
+          name: 'description',
+          content: 'L的个人博客概述'
+        }, {
+          hid: 'blog-index-keywords',
+          name: 'keywords',
+          content: 'L‘s Blog / 个人博客 / Vue / SSR / Nuxt / JS'
+        },
+      ]
+    },
   }
 </script>
 

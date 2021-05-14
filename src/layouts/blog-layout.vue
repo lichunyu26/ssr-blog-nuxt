@@ -56,6 +56,11 @@
     </a-layout>
     <a-layout-footer>
       <a href="http://beian.miit.gov.cn/" target="_blank">豫ICP备 2021001164号-1</a>
+      <a href="https://github.com/lichunyu26/ssr-blog-nuxt"
+         target="_blank"
+         style="float: right;">
+        <a-icon type="github"/>
+      </a>
     </a-layout-footer>
   </a-layout>
 </template>
@@ -166,12 +171,12 @@
   }
 
   .page-content {
-    height:100%;
+    height: 100%;
     box-sizing: border-box;
     padding: 8px 8px 8px 0;
     overflow-y: auto;
 
-    &::-webkit-scrollbar,::-webkit-scrollbar{
+    &::-webkit-scrollbar, ::-webkit-scrollbar {
       /*滚动条整体样式*/
       width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
       height: 0;

@@ -2,8 +2,9 @@
   <div class="insert-code-h5">
     <div class="btn-copy">
       <a-button size="small"
+                icon="copy"
                 v-copy="insertCode"
-                type="primary">一键复制
+                type="primary">
       </a-button>
     </div>
     <pre><code>{{insertCode}}</code></pre>

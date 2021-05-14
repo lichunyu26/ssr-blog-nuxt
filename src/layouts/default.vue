@@ -60,6 +60,11 @@
     </a-layout>
     <a-layout-footer>
       <a href="http://beian.miit.gov.cn/" target="_blank">豫ICP备 2021001164号-1</a>
+      <a href="https://github.com/lichunyu26/ssr-blog-nuxt"
+         target="_blank"
+         style="float: right;">
+        <a-icon type="github"/>
+      </a>
     </a-layout-footer>
   </a-layout>
 </template>
