@@ -1,0 +1,135 @@
+@import "CSSVariable";
+
+.video-bg {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+
+  &.mobile {
+    background: url("https://code-summary.oss-cn-shanghai.aliyuncs.com/images/67bd05fb4667dff7f6adeef35fa5b82.jpg") no-repeat center center /  auto 100%;
+  }
+  img {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    &.desktop {
+
+    }
+
+  }
+
+
+  div.video-fill {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .45);
+  }
+
+  div.my-info {
+    z-index: 4;
+    position: absolute;
+    width: 400px;
+    height: auto;
+    text-align: center;
+    left: calc(50% - 200px);
+    top: 35%;
+    color: white;
+
+    .my-info-title {
+      font-size: 42px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 0;
+    }
+
+    p, h3 {
+      transition: all .38s;
+
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+
+  div.to-begin {
+    z-index: 3;
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    color: white;
+    font-size: 42px;
+    left: calc(50% - 75px);
+    bottom: 25px;
+    text-align: center;
+
+    i.anticon.anticon-down {
+      transition: all .38s;
+      cursor: pointer;
+      opacity: .7;
+      animation: arrowMoveUp 4s 2s infinite;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.ant-back-top {
+  right: 10px;
+  bottom: 10px;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(16, 136, 233);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 50%;
+  transition: all .38s;
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+#layOut-Content {
+  position: relative;
+}
+
+.particles-dom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+@keyframes arrowMoveUp {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}

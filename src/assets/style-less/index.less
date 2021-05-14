@@ -1,0 +1,217 @@
+@import "CSSVariable";
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+body, html, #__nuxt, #__layout {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.demo-image {
+  max-width: 500px;
+  height: auto;
+  margin-bottom: 1em;
+  transition: all .38s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.component-view {
+  height: calc(100% - 70px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 8px;
+
+  &::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 7px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 0;
+  }
+}
+
+#__layout {
+  > .ant-layout {
+    height: 100%;
+
+    .ant-layout-header {
+      height: 100vh;
+      padding: 0;
+    }
+
+    #layOut-Content {
+      height: calc(100vh - 46px);
+      min-height: calc(100vh - 46px);
+      max-height: calc(100vh - 46px);
+
+      .ant-layout-sider {
+        z-index: 2;
+        background: transparent;
+        border-right: @borderStyle;
+        position: relative
+      }
+
+      > .ant-layout {
+        z-index: 2;
+        background: transparent;
+
+        .page-header-title {
+          border-bottom: @borderStyle;
+          height: 64px;
+          display: flex;
+          align-items: center;
+
+          .controller-left {
+            font-size: 20px;
+            min-width: 32px;
+            cursor: pointer;
+          }
+        }
+
+        .ant-page-header.ant-page-header-ghost {
+          padding: 0;
+        }
+      }
+    }
+
+    .ant-layout-footer {
+      padding: 12px 50px;
+      color: rgba(0, 0, 0, 0.85);
+      font-size: 14px;
+      border-top: @borderStyle;
+      box-shadow: @boxShadowEl;
+      text-align: center;
+
+      a {
+        font-size: 12px;
+        color: @textColor;
+
+        &:hover {
+          color: #40a9ff;
+        }
+      }
+    }
+  }
+}
+
+//页面过度动画
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.28s;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all .5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+
+aside, blockquote, body, button, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, section, td, textarea, th, ul {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+/*css主要部分的样式*/
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+//隐藏滚动条
+/*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}*/
+::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 0; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 0;
+}
+
+
+::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  background-color: skyblue;
+  background-image: -webkit-linear-gradient(45deg,
+  rgba(255, 255, 255, 0.2) 25%,
+  transparent 25%,
+  transparent 50%,
+  rgba(255, 255, 255, 0.2) 50%,
+  rgba(255, 255, 255, 0.2) 75%,
+  transparent 75%,
+  transparent);
+}
+
+::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #ededed;
+  border-radius: 10px;
+}
+
+.mobile-drawer {
+  .ant-drawer-body {
+    height: 100%;
+    padding: 0;
+
+    .ant-layout-sider.ant-layout-sider-dark {
+      height: 100%;
+      background: #fff;
+    }
+  }
+}
