@@ -12,7 +12,7 @@ pieChart?.setOption({...})"/>
         </p>
         <jump2origin
           originText="详情查看文档"
-          originURL="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Optional_chaining"></jump2origin>
+          originURL="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Optional_chaining"/>
 
         <h3>||一般用来给变量赋予一个默认值</h3>
         <insert-code-h5 insert-code="const tempObj = res || {}
@@ -45,20 +45,6 @@ console.log(tempObj)"/>
   export default {
     name: 'js-kinky-tricks',
     layout: "blog-layout",
-    head: {
-      title: 'L‘s Blog',
-      meta: [
-        {
-          hid: 'blog-index-description',
-          name: 'description',
-          content: 'L的个人博客概述'
-        }, {
-          hid: 'blog-index-keywords',
-          name: 'keywords',
-          content: 'L‘s Blog / 个人博客 / Vue / SSR / Nuxt / JS'
-        },
-      ]
-    },
   }
 </script>
 

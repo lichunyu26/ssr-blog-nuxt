@@ -25,6 +25,13 @@ export const blogList = [
       title: 'JS的一些使用技巧',
       summary: '日常搬砖过程中用的比较多的js的一些简单写法。',
     },
+  },{
+    path: "node-qrcode",
+    name: "node-qrcode",
+    meta: {
+      title: 'H5+JS生成二维码',
+      summary: '用qrcode.js在前端生成二维码。',
+    },
   },
 ]
 

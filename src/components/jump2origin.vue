@@ -1,6 +1,6 @@
 <template>
   <div class="jump2origin">
-    <a :href="originURL" target="_blank"> {{`${originText}-${originURL}`}}</a>
+    <a :href="originURL" target="_blank"> {{`${originText !== ''?(originText+'-'):''}${originURL}`}}</a>
   </div>
 </template>
 

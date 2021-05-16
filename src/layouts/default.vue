@@ -74,7 +74,7 @@
 
   import LeftSider from "/src/components/LeftSider.vue";
   import toInitCanvas from '/src/utils/canvas-bubble'
-
+import toInitCursorSpecialEffects from '/src/utils/mouse-click-special-effects'
   export default {
     components: {
       LeftSider
@@ -96,6 +96,8 @@
     mounted() {
       console.log(this.$route)
       toInitCanvas('bubble');
+      //
+      toInitCursorSpecialEffects()
     },
     methods: {
       toBegin() {

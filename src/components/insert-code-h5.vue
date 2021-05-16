@@ -23,16 +23,20 @@
   .insert-code-h5 {
     position: relative;
     display: inline-block;
+    /*height: 32px;*/
+    padding: 4px 11px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    line-height: 1.5;
     width: auto;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.12),
-    2px 2px 2px 4px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    /*line-height: ;*/
-    padding: 0;
     min-width: 500px;
-    margin: 1em 0;
+    margin-bottom: 4px;
     background: rgba(0, 0, 0, .05);
     max-width: 80%;
+
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    transition: all 0.3s;
 
     ::-webkit-scrollbar {
       /*滚动条整体样式*/
@@ -48,14 +52,16 @@
       right: 8px;
     }
 
-    &:hover .btn-copy {
-      display: block;
+    &:hover {
+      border-color: #40a9ff;
+      border-right-width: 1px !important;
+      .btn-copy {
+        display: block;
+      }
     }
 
     pre {
-      padding: 4px;
       margin-bottom: 0;
-      font-size: 16px;
     }
   }
 
