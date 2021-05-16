@@ -90,7 +90,25 @@ export default{
           originURL="https://www.pianshen.com/article/7564169815/"></jump2origin>
       </a-collapse-panel>
 
+      <a-collapse-panel header="Nuxt项目打包后自动部署到服务器">
+        <p>依赖</p>
+        <insert-code-h5 insert-code="npm install shelljs scp2 chalk ssh2 cross-env dotenv --save-dev"/>
+        <p>自动部署的实现方法参考了下面的这个文章，但是由于nuxt项目和Vue项目部署的文件不同，我根据个人的实际情况写了一个用于我这个项目的上传部署</p>
+        <p>实现思路如下：</p>
+        <p>一、要部署到服务器上，首先要连接到服务器。</p>
+        <p>二、连接到服务器后，先停止之前运行的pm2服务，然后删除原始文件。</p>
+        <p>三、原始文件删除后，把本地的打包文件上传至服务器。</p>
+        <p>四、安装依赖并启动pm2服务。</p>
+        <p>具体实现方法github上有源码，这里不贴源码了。</p>
+        <jump2origin
+          originText="参考文章：Vue打包并自动部署到指定服务器"
+          originURL="https://blog.csdn.net/a736755244/article/details/113408078"></jump2origin>
+      </a-collapse-panel>
+
     </a-collapse>
+    <jump2origin
+      originText="博客完整代码"
+      originURL="https://github.com/lichunyu26/ssr-blog-nuxt"></jump2origin>
 
   </div>
 </template>

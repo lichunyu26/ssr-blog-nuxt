@@ -3,7 +3,7 @@ import routes from './server/router.js'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'blog-ssr',
+    title: 'L`s Blog',
     htmlAttrs: {
       lang: 'en'
     },

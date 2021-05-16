@@ -6,7 +6,8 @@
     "dev": "nuxt --hostname 0.0.0.0 --port 8888",
     "build": "nuxt build",
     "start": "nuxt start --hostname 0.0.0.0 --port 3000",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "prod": "nuxt build && node deploy.js"
   },
   "dependencies": {
     "ant-design-vue": "^1.7.2",
@@ -16,7 +17,14 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.13.3",
+    "dotenv": "^9.0.2",
+    "chalk": "^4.1.1",
+    "cross-env": "^7.0.3",
     "less": "^4.1.1",
-    "less-loader": "^6.2.0"
+    "less-loader": "^6.2.0",
+    "ora": "^5.4.0",
+    "scp2": "^0.5.0",
+    "shelljs": "^0.8.4",
+    "ssh2": "^0.8.9"
   }
 }
