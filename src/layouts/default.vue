@@ -6,7 +6,7 @@
     <a-layout-header class="header">
       <div class="video-bg" :class="device">
         <img v-if="device==='desktop'"
-             src="https://code-summary.oss-cn-shanghai.aliyuncs.com/images/67bd05fb4667dff7f6adeef35fa5b82.jpg"
+             :src="bgUrl"
              :class="device"
              alt="L 个人博客">
         <div class="video-fill">
@@ -74,7 +74,8 @@
 
   import LeftSider from "/src/components/LeftSider.vue";
   import toInitCanvas from '/src/utils/canvas-bubble'
-import toInitCursorSpecialEffects from '/src/utils/mouse-click-special-effects'
+  import toInitCursorSpecialEffects from '/src/utils/mouse-click-special-effects'
+
   export default {
     components: {
       LeftSider
@@ -82,6 +83,7 @@ import toInitCursorSpecialEffects from '/src/utils/mouse-click-special-effects'
     data() {
       return {
         device: 'desktop',
+        bgUrl: null
       }
     },
     computed: {
@@ -93,8 +95,18 @@ import toInitCursorSpecialEffects from '/src/utils/mouse-click-special-effects'
         return this.$route.meta.subTitle
       }
     },
-    mounted() {
-      console.log(this.$route)
+    async mounted() {
+      const OSS = require('ali-oss');
+      const {data} = await this.$axios.$get("/authentication/oss")
+      if (data) {
+        const store = new OSS({
+          ...data
+        });
+        // 生成签名URL。
+        const url = store.signatureUrl('images/67bd05fb4667dff7f6adeef35fa5b82.jpg');
+        this.bgUrl = url
+      }
+
       toInitCanvas('bubble');
       //
       toInitCursorSpecialEffects()
@@ -110,11 +122,12 @@ import toInitCursorSpecialEffects from '/src/utils/mouse-click-special-effects'
 
 <style scoped lang="less">
   @import "../assets/style-less/layout";
+
   .page-content {
     height: calc(100% - 64px);
     overflow-y: auto;
 
-    &::-webkit-scrollbar,::-webkit-scrollbar{
+    &::-webkit-scrollbar, ::-webkit-scrollbar {
       /*滚动条整体样式*/
       width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
       height: 0;

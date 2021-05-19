@@ -1,6 +1,7 @@
 <template>
   <div class="nuxt-ssr">
     <h2>Nuxt.js & SSR</h2>
+    <h2>{{$store.state.counter}}</h2>
     <a-collapse>
 
       <a-collapse-panel header="搭建SSR项目的缘由">

@@ -34,10 +34,16 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/antd-ui',
+    '@/plugins/axios',
     {src: "@/plugins/vue-particles", ssr: false},
     {src: "@/plugins/directives", ssr: false},
   ],
-
+  publicRuntimeConfig: {
+    axios: {
+      baseURL:process.env.BASE_URL
+    }
+  },
+  modules: ['@nuxtjs/axios'],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
